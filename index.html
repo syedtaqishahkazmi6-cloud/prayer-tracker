@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prayer Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>🕌 Daily & Weekly Prayer Tracker</h1>
+        <p class="subtitle">Developed by Syed Taqi Shah Kazmi</p>
+    </header>
+
+    <section class="prayer-times">
+        <h2>Prayer Times</h2>
+        <ul>
+            <li>Fajr: <span contenteditable="true">05:00 AM</span></li>
+            <li>Dhuhr: <span contenteditable="true">12:30 PM</span></li>
+            <li>Asr: <span contenteditable="true">04:00 PM</span></li>
+            <li>Maghrib: <span contenteditable="true">06:15 PM</span></li>
+            <li>Isha: <span contenteditable="true">08:00 PM</span></li>
+        </ul>
+    </section>
+
+    <section class="attendance">
+        <h2>Weekly Attendance</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prayer</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fajr</td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Dhuhr</td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Asr</td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Maghrib</td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                    <tr>
+                        <td>Isha</td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                        <td><input type="checkbox" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button onclick="clearAttendance()">🧹 Clear Attendance</button>
+    </section>
+
+    <section class="works">
+        <h2>Today's Works</h2>
+        <ol>
+            <li><textarea placeholder="Task 1..."></textarea></li>
+            <li><textarea placeholder="Task 2..."></textarea></li>
+            <li><textarea placeholder="Task 3..."></textarea></li>
+            <li><textarea placeholder="Task 4..."></textarea></li>
+            <li><textarea placeholder="Task 5..."></textarea></li>
+            <li><textarea placeholder="Task 6..."></textarea></li>
+            <li><textarea placeholder="Task 7..."></textarea></li>
+            <li><textarea placeholder="Task 8..."></textarea></li>
+            <li><textarea placeholder="Task 9..."></textarea></li>
+            <li><textarea placeholder="Task 10..."></textarea></li>
+        </ol>
+        <button onclick="clearNotes()">🧹 Clear Notes</button>
+    </section>
+
+    <section class="custom">
+        <h2 contenteditable="true">1. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">2. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">3. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">4. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">5. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">6. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">7. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">8. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">9. Your Heading</h2><textarea></textarea>
+        <h2 contenteditable="true">10. Your Heading</h2><textarea></textarea>
+        <button onclick="clearNotes()">🧹 Clear Notes</button>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by Syed Taqi Shah Kazmi</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,46 +1,52 @@
-// Save and restore checkboxes
-document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
-    const key = `checkbox${index}`;
-    checkbox.checked = localStorage.getItem(key) === 'true';
-    checkbox.addEventListener('change', () => {
-        localStorage.setItem(key, checkbox.checked);
-    });
-});
+// Initialize Firebase Realtime Database
+const db = firebase.database();
 
-// Save and restore textareas
+// Save and load notes
 document.querySelectorAll('textarea').forEach((textarea, index) => {
-    const key = `textarea${index}`;
-    textarea.value = localStorage.getItem(key) || '';
+    const ref = db.ref(`notes/note${index}`);
+
+    // Load saved note
+    ref.once('value').then(snapshot => {
+        if (snapshot.exists()) {
+            textarea.value = snapshot.val();
+        }
+    });
+
+    // Save on input
     textarea.addEventListener('input', () => {
-        localStorage.setItem(key, textarea.value);
+        ref.set(textarea.value);
     });
 });
 
-// Save and restore editable headings
-document.querySelectorAll('h2[contenteditable]').forEach((heading, index) => {
-    const key = `heading${index}`;
-    heading.innerText = localStorage.getItem(key) || heading.innerText;
-    heading.addEventListener('input', () => {
-        localStorage.setItem(key, heading.innerText);
+// Save and load checkboxes
+document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+    const ref = db.ref(`attendance/box${index}`);
+
+    // Load saved state
+    ref.once('value').then(snapshot => {
+        if (snapshot.exists()) {
+            checkbox.checked = snapshot.val();
+        }
+    });
+
+    // Save on change
+    checkbox.addEventListener('change', () => {
+        ref.set(checkbox.checked);
     });
 });
 
-// Clear attendance checkboxes
+// Clear attendance
 function clearAttendance() {
     document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
         checkbox.checked = false;
-        localStorage.removeItem(`checkbox${index}`);
+        db.ref(`attendance/box${index}`).set(false);
     });
 }
 
-// Clear all notes and headings
+// Clear notes
 function clearNotes() {
     document.querySelectorAll('textarea').forEach((textarea, index) => {
         textarea.value = '';
-        localStorage.removeItem(`textarea${index}`);
-    });
-    document.querySelectorAll('h2[contenteditable]').forEach((heading, index) => {
-        heading.innerText = `${index + 1}. Your Heading`;
-        localStorage.removeItem(`heading${index}`);
+        db.ref(`notes/note${index}`).set('');
     });
 }

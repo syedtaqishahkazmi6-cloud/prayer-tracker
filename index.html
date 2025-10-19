@@ -32,13 +32,13 @@
                 <thead>
                     <tr>
                         <th>Prayer</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>
+                        <th>Mon<br><button onclick="clearColumn(0)" class="clear-btn">🧹</button></th>
+                        <th>Tue<br><button onclick="clearColumn(1)" class="clear-btn">🧹</button></th>
+                        <th>Wed<br><button onclick="clearColumn(2)" class="clear-btn">🧹</button></th>
+                        <th>Thu<br><button onclick="clearColumn(3)" class="clear-btn">🧹</button></th>
+                        <th>Fri<br><button onclick="clearColumn(4)" class="clear-btn">🧹</button></th>
+                        <th>Sat<br><button onclick="clearColumn(5)" class="clear-btn">🧹</button></th>
+                        <th>Sun<br><button onclick="clearColumn(6)" class="clear-btn">🧹</button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,13 +95,6 @@
                 </tbody>
             </table>
         </div>
-        <button onclick="clearColumn(0)">🧹 Clear Monday</button>
-        <button onclick="clearColumn(1)">🧹 Clear Tuesday</button>
-        <button onclick="clearColumn(2)">🧹 Clear Wednesday</button>
-        <button onclick="clearColumn(3)">🧹 Clear Thursday</button>
-        <button onclick="clearColumn(4)">🧹 Clear Friday</button>
-        <button onclick="clearColumn(5)">🧹 Clear Saturday</button>
-        <button onclick="clearColumn(6)">🧹 Clear Sunday</button>
     </section>
 
     <section class="works">
@@ -155,7 +148,6 @@
         };
         firebase.initializeApp(firebaseConfig);
     </script>
-
     <script src="script.js"></script>
 </body>
 

@@ -95,7 +95,13 @@
                 </tbody>
             </table>
         </div>
-        <button onclick="clearAttendance()">🧹 Clear Attendance</button>
+        <button onclick="clearColumn(0)">🧹 Clear Monday</button>
+        <button onclick="clearColumn(1)">🧹 Clear Tuesday</button>
+        <button onclick="clearColumn(2)">🧹 Clear Wednesday</button>
+        <button onclick="clearColumn(3)">🧹 Clear Thursday</button>
+        <button onclick="clearColumn(4)">🧹 Clear Friday</button>
+        <button onclick="clearColumn(5)">🧹 Clear Saturday</button>
+        <button onclick="clearColumn(6)">🧹 Clear Sunday</button>
     </section>
 
     <section class="works">
@@ -130,10 +136,10 @@
     </section>
 
     <footer>
-        <p> by Syed Taqi Shah Kazmi</p>
+        <p>Made with ❤️ by Syed Taqi Shah Kazmi</p>
     </footer>
 
-    <!-- ✅ Firebase SDKs -->
+    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js"></script>
     <script>
@@ -150,7 +156,6 @@
         firebase.initializeApp(firebaseConfig);
     </script>
 
-    <!-- ✅ Your App Logic -->
     <script src="script.js"></script>
 </body>
 

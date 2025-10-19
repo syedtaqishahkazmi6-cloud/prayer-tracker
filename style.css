@@ -70,23 +70,17 @@ td {
     vertical-align: middle;
 }
 
+th:first-child,
+td:first-child {
+    width: 100px;
+    white-space: nowrap;
+    text-align: left;
+    padding-left: 8px;
+}
+
 th {
     background: #e0f7f1;
     font-weight: bold;
-}
-
-.clear-btn {
-    font-size: 11px;
-    padding: 2px 5px;
-    margin-top: 4px;
-    background: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.clear-btn:hover {
-    background-color: #ddd;
 }
 
 #today-notes {
@@ -99,27 +93,6 @@ th {
     background: #fdfdfd;
     resize: vertical;
     margin-bottom: 0.5em;
-}
-
-#notes-count {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 0.5em;
-}
-
-button {
-    background-color: #007b5e;
-    color: white;
-    border: none;
-    padding: 0.5em 1em;
-    margin-top: 0.5em;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-}
-
-button:hover {
-    background-color: #005f4a;
 }
 
 footer {
@@ -138,28 +111,55 @@ footer {
     tr {
         font-size: 0.85em;
     }
-    .clear-btn {
-        font-size: 10px;
-        padding: 1px 4px;
-    }
     #today-notes {
         font-size: 0.9em;
-    }
-    button {
-        font-size: 0.85em;
-        padding: 0.4em 0.8em;
     }
 }
 
 
-/* Fix prayer name column width */
+/* Make table scrollable on mobile */
 
-table th:first-child,
-table td:first-child {
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Fix prayer column width and prevent wrapping */
+
+th:first-child,
+td:first-child {
     width: 100px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: left;
     padding-left: 8px;
+}
+
+
+/* Responsive tweaks for small screens */
+
+@media (max-width: 600px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        font-size: 0.75em;
+    }
+    th,
+    td {
+        padding: 0.3em;
+    }
+    #today-notes {
+        font-size: 0.9em;
+    }
+    h2 {
+        font-size: 1.1em;
+    }
+    .subtitle {
+        font-size: 0.8em;
+    }
 }

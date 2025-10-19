@@ -32,13 +32,13 @@
                 <thead>
                     <tr>
                         <th>Prayer</th>
-                        <th>Mon<br><button onclick="clearColumn(0)" class="clear-btn">🧹</button></th>
-                        <th>Tue<br><button onclick="clearColumn(1)" class="clear-btn">🧹</button></th>
-                        <th>Wed<br><button onclick="clearColumn(2)" class="clear-btn">🧹</button></th>
-                        <th>Thu<br><button onclick="clearColumn(3)" class="clear-btn">🧹</button></th>
-                        <th>Fri<br><button onclick="clearColumn(4)" class="clear-btn">🧹</button></th>
-                        <th>Sat<br><button onclick="clearColumn(5)" class="clear-btn">🧹</button></th>
-                        <th>Sun<br><button onclick="clearColumn(6)" class="clear-btn">🧹</button></th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -100,15 +100,12 @@
     <section class="works">
         <h2>Today's Tasks</h2>
         <textarea id="today-notes" placeholder="Write your tasks here..."></textarea>
-        <p id="notes-count">0 tasks written</p>
-        <button onclick="clearNotes()">🧹 Clear Tasks</button>
     </section>
 
     <footer>
         <p>Made with ❤️ by Syed Taqi Shah Kazmi</p>
     </footer>
 
-    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js"></script>
     <script src="script.js"></script>

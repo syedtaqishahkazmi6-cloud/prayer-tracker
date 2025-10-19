@@ -1,36 +1,38 @@
+/* Base layout */
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f0f8ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background: #f4f4f4;
     color: #333;
 }
 
 header {
-    background: linear-gradient(to right, #00b894, #00cec9);
+    background: #007b5e;
     color: white;
-    padding: 1.5rem;
+    padding: 1.5em 1em;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+    color: #d0f0e0;
 }
 
 section {
-    margin: 1rem;
-    padding: 1rem;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1em auto;
+    padding: 1em;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
     margin-top: 0;
-    color: #0984e3;
+    color: #007b5e;
 }
 
 ul {
@@ -38,18 +40,21 @@ ul {
     padding: 0;
 }
 
-li {
-    margin: 0.5rem 0;
-    font-size: 1rem;
+ul li {
+    margin: 0.5em 0;
+    font-size: 1em;
 }
 
-span[contenteditable] {
-    background: #eef;
-    padding: 0.2rem 0.5rem;
+ul li span[contenteditable] {
+    background: #f0f0f0;
+    padding: 0.2em 0.4em;
     border-radius: 4px;
     display: inline-block;
     min-width: 80px;
 }
+
+
+/* Table styles */
 
 .table-wrapper {
     overflow-x: auto;
@@ -57,56 +62,105 @@ span[contenteditable] {
 
 table {
     width: 100%;
-    min-width: 600px;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin-top: 1em;
+    table-layout: fixed;
 }
 
 th,
 td {
     border: 1px solid #ccc;
-    padding: 0.6rem;
+    padding: 0.4em;
     text-align: center;
+    vertical-align: middle;
 }
 
 th {
-    background-color: #dfe6e9;
-    color: #2d3436;
-}
-
-input[type="checkbox"] {
-    transform: scale(1.3);
-}
-
-textarea {
-    width: 100%;
-    height: 80px;
-    margin-top: 0.5rem;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    resize: vertical;
-    background: #f9f9ff;
-}
-
-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #fab1a0;
-    border: none;
-    border-radius: 6px;
+    background: #e0f7f1;
     font-weight: bold;
+}
+
+
+/* Small clear buttons under each weekday */
+
+.clear-btn {
+    font-size: 11px;
+    padding: 2px 5px;
+    margin-top: 4px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #ff7675;
-    color: white;
+.clear-btn:hover {
+    background-color: #ddd;
 }
+
+
+/* Textareas */
+
+textarea {
+    width: 100%;
+    min-height: 60px;
+    resize: vertical;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 0.8em;
+    background: #fdfdfd;
+}
+
+
+/* Main buttons */
+
+button {
+    background-color: #007b5e;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+button:hover {
+    background-color: #005f4a;
+}
+
+
+/* Footer */
 
 footer {
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #636e72;
+    padding: 1em;
+    font-size: 0.85em;
+    color: #777;
+}
+
+
+/* Responsive tweaks */
+
+@media (max-width: 600px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        font-size: 0.85em;
+    }
+    .clear-btn {
+        font-size: 10px;
+        padding: 1px 4px;
+    }
+    textarea {
+        font-size: 0.9em;
+    }
+    button {
+        font-size: 0.85em;
+        padding: 0.4em 0.8em;
+    }
 }
